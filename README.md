@@ -11,16 +11,10 @@ This repo can be used in two ways:
 
 ## Changes Made
 
-All changes can be seen in [this GitHub diff view](https://github.com/DylanSp/vite-react-ts-customized/compare/eca5a44767b3ac190ba551d64ec97cd3a6ddb61c...d81cf0a6afbc5770219ebefa8c7c4fd5367465a6).
-
-- ESLint is configured more strictly with type-aware linting (in `.eslintrc.cjs`), following the suggestions in the Vite template's README - see commit [`a86d4dd`](https://github.com/DylanSp/vite-react-ts-customized/commit/a86d4dd09bb76aae912262c24bc8719b72824108).
-  - ESLint's `parserOptions` are added.
-  - `plugin:@typescript-eslint/recommended` is replaced with `plugin:@typescript-eslint/recommended-type-checked`.
-  - [`eslint-plugin-react`](https://github.com/jsx-eslint/eslint-plugin-react) is installed, adding `plugin:react/recommended` and `plugin:react/jsx-runtime`.
-- ESLint is configured to automatically detect the current React version - see commit [`c082caa`](https://github.com/DylanSp/vite-react-ts-customized/commit/c082caa8241d40a86718c1ff66b4925e77f7f476).
+- ESLint is updated to use the new flat config file format for ESLint 9, as well as the current typescript-eslint toolchain.
 - Prettier is added and configured for code formatting - see commit [`897f0ad`](https://github.com/DylanSp/vite-react-ts-customized/commit/897f0ad7afcbfc2345296c0be2c31b51f0830969). Prettier has also been run on all files in this repo. This repo doesn't include any settings to run Prettier automatically on saving a file - set that up in your editor of choice.
   - `prettier`, `eslint-config-prettier`, and `eslint-plugin-prettier` are added as `devDependencies` in `package.json`.
-  - `"plugin:prettier/recommended"` is added to the end of the `extends` array in `eslintrc.cjs`.
-  - `"prettier/prettier": "warn"` is added as an ESLint rule in `eslintrc.cjs`.
+  - `eslintPluginPrettierRecommended` is added to the end of the `extends` array in `eslint.config.js`.
+  - `"prettier/prettier": "warn"` is added as an ESLint rule in `eslint.config.js`.
   - `.prettierc.cjs` is added with Prettier settings, though this isn't necessary; trailing commas and an increased line length are just my personal preferences.
-- The `dev` and `preview` scripts in `package.json` have the `--host` option added, which enables them to work in GitHub Codespaces - see commit [`d81cf0a`](https://github.com/DylanSp/vite-react-ts-customized/commit/d81cf0a6afbc5770219ebefa8c7c4fd5367465a6). I found this solution from https://github.com/vitejs/vite/discussions/12561.
+- The `dev` and `preview` scripts in `package.json` have the `--host` option added, which enables them to work in GitHub Codespaces - see commit [`d81cf0a`](https://github.com/DylanSp/vite-react-ts-customized/commit/d81cf0a6afbc5770219ebefa8c7c4fd5367465a6). I found this solution [in this GitHub issue for Vite](https://github.com/vitejs/vite/discussions/12561).
